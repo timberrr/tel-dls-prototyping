@@ -1,0 +1,132 @@
+<!-- Use this page as the Index-ogOg-og for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layouts/layout.html' %}
+<!--
+  In /views/layout.html you can:
+  - change the header and footer
+  - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Welcome - DLS prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/prototypes/my-admin",
+    text: "Home"
+  }) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <h1>
+          <span class="nhsuk-caption-l">
+            Default NHS Trust
+            <span class="nhsuk-u-visually-hidden"> - </span>
+          </span>
+          Admin dashboard
+        </h1>
+        
+        <div class="nhsuk-warning-callout">
+          <h3 class="nhsuk-warning-callout__label">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Important: </span>
+              Action required
+            </span>
+          </h3>
+          <p>You have <b>6</b> notifications requiring action:</p>
+          <ul>
+            <li><a href="#"><b>John Doe</b> has 2 proficiencies in IV Therapy Passport awaiting review</a>.</li>
+            <li><a href="#"><b>Michael Johnson</b> has 4 proficiencies in Step 1 awaiting review</a>.</li>
+            <li><a href="#"><b>Sarah Wilson</b> has requested final sign-off for Step 1</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <h2>Your centre:</h2>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        {% from "components/listing.njk" import listing %}
+
+        {% set selectAFramework = [{
+            "heading": "Search and manage users",
+            "href": "/prototypes/my-admin/dashboard/users",
+            "content": "Register or update users, enrol them onto frameworks or promote them to admin roles."
+          },{
+            "heading": "Manage my centre <span class='nhsuk-tag nhsuk-tag--grey'>Centre Manager role only</span>",
+            "href": "/prototypes/my-admin/dashboard/centre",
+            "content": "Update your centre details"
+          }]
+        %}
+
+        {{ listing(selectAFramework) }}
+
+      </div>
+    </div>
+  </div>
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <h2>Your frameworks:</h2>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        {% from "components/listing-framework.njk" import listingFramework %}
+
+        {% set selectAFramework = [{
+            "heading": "IV Therapy Passport",
+            "href": "/prototypes/my-admin/select-a-framework/dashboard",
+            "content": "",
+            "role": "Educator/Manager",
+            "actions": 3
+          },{
+            "heading": "Step 1",
+            "href": "#",
+            "content": "",
+            "role": "Assessor",
+            "actions": 0
+          },{
+            "heading": "Step 2",
+            "href": "#",
+            "content": "",
+            "role": "Framework manager",
+            "actions": 4
+          }]
+        %}
+
+        {{ listingFramework(selectAFramework) }}
+
+        <div class="nhsuk-inset-text nhsuk-u-reading-width">
+          <p><b>Don't see the framework you're looking for?</b> You might need to be assigned an admin role by an existing admin user.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

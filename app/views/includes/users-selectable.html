@@ -1,5 +1,5 @@
 {% from "data/users.njk" import users %}
-{% from "components/listing.njk" import listing %}
+{% from "components/listing-with-select.njk" import listingWithSelect %}
 {% from 'pagination/macro.njk' import pagination %}
 
 {% set listOfUsers = [] %}
@@ -45,7 +45,7 @@
   {% set listOfUsers = (listOfUsers.push(userFormatted), listOfUsers) %}
 {% endfor %}
 
-{{ listing(listOfUsers) }}
+{{ listingWithSelect(listOfUsers) }}
 
 {{ pagination({
   "nextUrl": "#next",

@@ -15,17 +15,11 @@
 {% block beforeContent %}
   {{ breadcrumb({
     items: [{
-      href: "/prototypes/admin-frameworks",
+      href: "/prototypes/my-admin",
       text: "Home"
     },{
-      href: "/prototypes/admin-frameworks/select-a-framework",
-      text: "Select a framework"
-    },{
-      href: "/prototypes/admin-frameworks/select-a-framework/framework-dashboard",
-      text: "IV Therapy passport"
-    },{
-      href: "/prototypes/admin-frameworks/select-a-framework/framework-dashboard/users",
-      text: "Users"
+      href: "/prototypes/my-admin/dashboard",
+      text: "My admin"
     }]
   }) }}
 {% endblock %}
@@ -37,11 +31,14 @@
         <div class="nhsuk-grid-column-full">
           <h1>
             <span class="nhsuk-caption-l">
-              IV Therapy passport framework
+              Default NHS Trust
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
             Search and manage users
           </h1>
+          <div class="nhsuk-u-reading-width">
+            <p class="nhsuk-body-l">Here you can view all users registered with your centre, register new users, and add them to frameworks or admin roles.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -54,7 +51,7 @@
               <a class="proto-in-page-nav__link" href="#">Search users</a>
             </li>
             <li class="proto-in-page-nav__item">
-              <a class="proto-in-page-nav__link" href="#">Register users</a>
+              <a class="proto-in-page-nav__link" href="#">Add new users</a>
             </li>
             {# <li class="proto-in-page-nav__item">
               <a class="proto-in-page-nav__link" href="#">Send welcome message</a>
@@ -63,14 +60,6 @@
               <a class="proto-in-page-nav__link" href="bulk-actions">Bulk actions</a>
             </li>
           </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="proto-content-block">
-      <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-full">
-          <p class="nhsuk-lead-text nhsuk-body-l">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus consequuntur odio, dolore nostrum eveniet.</p>
         </div>
       </div>
     </div>

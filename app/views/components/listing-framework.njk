@@ -1,0 +1,42 @@
+{% macro listingFramework(listing = []) %}
+  {% for item in listing %}
+    {% set heading = item.heading %}
+    {% set href = item.href %}
+    {% set content = item.content %}
+    {% set actions = item.actions %}
+    {% set role = item.role %}
+
+    <div class="proto-listing nhsuk-u-reading-width {{ classes }}">
+      <ul class="nhsuk-list">
+        <li class="nhsuk-list-item">
+          <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
+              {{ heading | safe }}
+          </h3>
+
+          <p class="nhsuk-body-s nhsuk-u-margin-bottom-2">
+            Your role: <b>{{ role }}</b>
+            {{ content | safe }}
+          </p>
+
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+              <a href="/prototypes/my-admin/admin-dashboard/learners">
+                View learner progress <span class="nhsuk-u-visually-hidden">for {{ heading | safe }}</span></a>
+                &nbsp;|&nbsp;
+              <a href="/prototypes/my-admin/admin-dashboard/reports">
+                Download reports <span class="nhsuk-u-visually-hidden">for {{ heading | safe }}</span></a>
+                &nbsp;|&nbsp;
+              <a href="/prototypes/my-admin/admin-dashboard/actions">
+                {% if actions > 0 %}
+                  <b>View outstanding actions ({{ actions }})</b>{% else %}
+                  View outstanding actions{% endif %} <span class="nhsuk-u-visually-hidden">for {{ heading | safe }}</span>
+                  </a>
+            </div>
+          </div>
+
+          <hr class="nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
+        </li>
+      </ul>
+    </div>
+  {% endfor %}
+{% endmacro %}
