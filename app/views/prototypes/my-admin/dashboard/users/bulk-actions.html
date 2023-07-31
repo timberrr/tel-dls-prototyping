@@ -37,11 +37,14 @@
         <div class="nhsuk-grid-column-full">
           <h1>
             <span class="nhsuk-caption-l">
-              IV Therapy passport framework
+              Default NHS Trust
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
             Search and manage users
           </h1>
+          <div class="nhsuk-u-reading-width">
+            <p class="nhsuk-body-l">Here you can view all users registered with your centre, register new users, and add them to frameworks or admin roles.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -51,27 +54,28 @@
         <div class="nhsuk-grid-column-full">
           <ul class="proto-in-page-nav__list">
             <li class="proto-in-page-nav__item">
-              <a class="proto-in-page-nav__link" href="users-search">Search users</a>
-            </li>
-            <li class="proto-in-page-nav__item">
-              <a class="proto-in-page-nav__link" href="#">Register users</a>
+              <a class="proto-in-page-nav__link" href="/prototypes/my-admin/dashboard/users">Search users</a>
             </li>
             {# <li class="proto-in-page-nav__item">
               <a class="proto-in-page-nav__link" href="#">Send welcome message</a>
             </li> #}
             <li class="proto-in-page-nav__item proto-in-page-nav__item--active">
-              <a class="proto-in-page-nav__link" href="#">Bulk actions</a>
+              <a class="proto-in-page-nav__link" href="/prototypes/my-admin/dashboard/users/bulk-actions">Bulk actions</a>
+            </li>
+            <li class="proto-in-page-nav__item">
+              <a class="proto-in-page-nav__link" href="/prototypes/my-admin/dashboard/users/register">Add new users</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
-
-    <div class="proto-content-block">
-      <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-full">
-          <p class="nhsuk-lead-text nhsuk-body-l">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus consequuntur odio, dolore nostrum eveniet.</p>
-        </div>
+    
+    <div class="nhsuk-u-reading-width">
+      <p>Select users from the following list and then pick a bulk action to carry out on all selected users.</p>
+      <div>
+        <button class="nhsuk-button">Enrol on a framework</button>
+        <button class="nhsuk-button nhsuk-button--secondary">Add an admin role</button>
+        <button class="nhsuk-button">Resend invite email</button>
       </div>
     </div>
 
